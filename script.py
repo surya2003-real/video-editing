@@ -25,7 +25,7 @@ def create_short_video(long_video_path, clips_info, music_path, output_path):
         # print("Before crop:", clip.w)
         clip = crop(clip, width=clip.w - 200, height=clip.h, x_center=clip.w//2, y_center=clip.h//2)  # Crop both sides
         # print("After crop:", clip.size)
-        clip = add_text_with_transition(clip, text_overlay, 60, 'white', 'center', 1.5)
+        clip = add_text_with_transition(clip, text_overlay, 60, 'white', 'center', 1)
         clips.append(clip)
         
         audio_clip = AudioFileClip(music_path).subclip(audio_start, audio_end)
@@ -47,7 +47,7 @@ clips_info = [
     (7, 9, 155, 157, "War Robot!"),
     (23, 24, 157, 158, "Invincible!"),
     (44, 45, 158, 159, "Unstoppable!"),
-    (64, 67, 159, 162, "Sharp Shooter!"),
+    (63.5, 66.5, 159, 162, "Sharp Shooter!"),
     (88, 91, 162, 165, "Oppressed by Humans!"),
     (200, 215, 165, 180, "Turns against Humans!"),
     (220, 225, 180, 185, "Freedom!")
